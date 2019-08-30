@@ -1,16 +1,14 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components/macro";
 
-import GlobalStyle from "styles/globalStyle";
+import GlobalStyle from "styles/GlobalStyle";
 import theme from "styles/theme";
 
-import Button from "components/Button";
+import BaseButton from "components/Button/BaseButton";
 
 const SC = {
   App: styled.div`
-    .headline-1 {
-      ${p => p.theme.typeMixin.headline1}
-    }
+    padding: ${p => p.theme.size.l};
   `
 };
 
@@ -20,9 +18,7 @@ function App() {
       <SC.App>
         <GlobalStyle></GlobalStyle>
 
-        <Button>Click me</Button>
-
-        <p className="headline-1">Headline 1</p>
+        <BaseButton>Click me</BaseButton>
       </SC.App>
     </ThemeProvider>
   );

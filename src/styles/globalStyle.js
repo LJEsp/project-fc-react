@@ -38,8 +38,8 @@ const resetCSS = css`
   }
 `;
 
-export default createGlobalStyle`
-  ${resetCSS}
+const GlobalStyle = createGlobalStyle`
+${resetCSS}
 
   ${p => p.theme.settings.fontImports};
 
@@ -50,3 +50,5 @@ export default createGlobalStyle`
     font-family: ${p => p.theme.settings.fontFamily}
   }
 `;
+
+export default GlobalStyle;
