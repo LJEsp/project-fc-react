@@ -6,10 +6,7 @@ import GlobalStyle from "../src/styles/GlobalStyle";
 import theme from "../src/styles/theme";
 
 // automatically import all files ending in *.stories.js
-const req = require.context("../src", true, /\.stories\.js$/);
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
-}
+configure(require.context("../src/components", true, /\.stories\.js$/), module);
 
 // Include theme and global styling
 const withStyled = cb => (
@@ -22,5 +19,3 @@ const withStyled = cb => (
 );
 
 addDecorator(withStyled);
-
-configure(loadStories, module);

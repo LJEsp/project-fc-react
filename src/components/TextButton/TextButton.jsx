@@ -3,13 +3,13 @@ import styled from "styled-components/macro";
 
 const SC = {
   TextButton: styled.a`
-    ${p => p.theme.type.mixin.button};
+    ${p => p.theme.typography.mixin.button};
 
     color: ${p => p.theme.color.primary.main};
     cursor: pointer;
 
     &:hover {
-      color: ${p => p.theme.color.primary.dark};
+      color: ${p => p.theme.color.primary.light};
     }
 
     &:focus {
