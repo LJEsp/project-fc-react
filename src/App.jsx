@@ -4,13 +4,7 @@ import styled, { ThemeProvider } from "styled-components/macro";
 import GlobalStyle from "styles/GlobalStyle";
 import theme from "styles/theme";
 
-import BaseButton from "components/Button/BaseButton";
-
-const SC = {
-  App: styled.div`
-    padding: ${p => p.theme.size.l};
-  `
-};
+import ReactionPlayer from "./ReactionPlayer";
 
 function App() {
   return (
@@ -18,10 +12,19 @@ function App() {
       <SC.App>
         <GlobalStyle></GlobalStyle>
 
-        <BaseButton>Click me</BaseButton>
+        <SC.ReactionPlayer></SC.ReactionPlayer>
       </SC.App>
     </ThemeProvider>
   );
 }
+
+const SC = {
+  App: styled.div`
+    text-align: center;
+  `,
+  ReactionPlayer: styled(ReactionPlayer)`
+    margin-top: 6rem;
+  `
+};
 
 export default App;
